@@ -5,17 +5,14 @@ public class HelloApp {
 
         if (args.length > 0) {
             StringBuilder sb = new StringBuilder();
-            boolean first = true;
 
             for (String name : args) {
-                if (!first) {
-                    sb.append(", ");
-                }
-                sb.append(name);
-                first = false;
+                sb.append(name).append(", ");
             }
 
-            result = sb.toString();
+            // Remove last ", "
+            result = sb.substring(0, sb.length() - 2);
+
         } else {
             result = "World";
         }
